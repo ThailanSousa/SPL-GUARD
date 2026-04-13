@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPL GUARD — Avaliação de Risco Ponderada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto relative pb-40">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight flex justify-center items-center gap-3">
+                <span>🛡️</span> SPL GUARD
+            </h1>
+            <h2 class="text-xl md:text-2xl font-medium text-slate-600 mt-2 uppercase tracking-widest">
+                Validação de Requisitos — Etapa 1
+            </h2>
+        </header>
+
+        <section class="bg-white rounded-3xl p-8 border border-slate-200 shadow-md">
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-6 flex items-center gap-3 border-b pb-4">
+                ✅ AUTOAVALIAÇÃO DO DESENVOLVEDOR
+            </h3>
+
+            <div class="space-y-8">
+                
+                <!-- Grupo 1 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 1. SOBRE OS DADOS</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Os dados manipulados foram classificados (sensíveis, pessoais, comuns)?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q1_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q1_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Dados sensíveis estão protegidos (criptografia ou hash)?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q1_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q1_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe justificativa para coleta de cada dado?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q1_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q1_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe definição de onde os dados serão armazenados?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q1_4" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q1_4" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe definição de tempo de retenção dos dados?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q1_5" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q1_5" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo 2 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 2. SOBRE AUTENTICAÇÃO</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Senhas são armazenadas com hash seguro (bcrypt/argon2)?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q2_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q2_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe política mínima de senha (tamanho/complexidade)?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q2_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q2_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Sessões possuem expiração automática?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q2_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q2_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe proteção contra múltiplas tentativas de login?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q2_4" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q2_4" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe mecanismo seguro de recuperação de senha?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q2_5" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q2_5" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo 3 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 3. SOBRE CONTROLE DE ACESSO</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existem perfis de usuário definidos?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q3_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q3_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">O sistema aplica princípio do menor privilégio?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q3_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q3_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Permissões são validadas no backend?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q3_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q3_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe proteção contra acesso direto por URL/API?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q3_4" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q3_4" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo 4 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 4. SOBRE ENTRADAS E VALIDAÇÃO</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Todas as entradas são validadas no backend?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q4_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q4_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe proteção contra SQL Injection (queries parametrizadas)?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q4_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q4_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe proteção contra XSS?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q4_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q4_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe controle de tamanho/formato de entrada?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q4_4" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q4_4" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo 5 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 5. SOBRE ARQUITETURA E EXPOSIÇÃO</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">O sistema utiliza HTTPS obrigatoriamente?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q5_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q5_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Serviços desnecessários estão desativados?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q5_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q5_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Integrações externas são validadas e seguras?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q5_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q5_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo 6 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 6. SOBRE DEPENDÊNCIAS</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Bibliotecas utilizadas são confiáveis e atualizadas?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q6_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q6_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe controle sobre dependências utilizadas?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q6_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q6_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo 7 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 7. SOBRE CONFIGURAÇÃO</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Credenciais estão fora do código (env)?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q7_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q7_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Ambiente de produção está sem debug ativo?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q7_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q7_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo 8 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 8. SOBRE MONITORAMENTO</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">O sistema registra eventos críticos (logins, erros)?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q8_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q8_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Logs evitam exposição de dados sensíveis?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q8_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q8_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grupo 9 -->
+                <div>
+                    <h4 class="font-bold text-indigo-600 mb-3">🔹 9. SOBRE RESILIÊNCIA</h4>
+                    <div class="space-y-2 ml-0 md:ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
+                            <span class="text-slate-700">Existe estratégia de backup definida?</span>
+                            <div class="flex gap-2 shrink-0">
+                                <label class="cursor-pointer"><input type="radio" name="q9_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q9_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Score 0 a 1000 Estilo Serasa -->
+            <div id="score-card" class="mt-12 bg-white border-2 border-slate-200 rounded-2xl p-6 text-center shadow-lg sticky bottom-4 z-50 transition-all duration-500">
+                <h4 class="text-lg font-bold text-slate-700 mb-1 uppercase tracking-wider">Classificação Final (SPL Guard)</h4>
+                <div class="flex items-center justify-center gap-2">
+                    <span id="score-display" class="text-6xl font-black text-slate-300 transition-colors duration-500">0</span>
+                    <span class="text-slate-400 font-medium text-xl mt-4">/ 1000</span>
+                </div>
+                <p id="score-text" class="text-sm font-bold mt-3 text-slate-500 uppercase tracking-wide">Avaliação não iniciada</p>
+                
+                <div class="relative w-full mt-6">
+                    <div id="score-pointer" class="absolute -top-6 -ml-3 transition-all duration-1000 z-10 text-2xl" style="left: 0%;">🔽</div>
+                    <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden flex">
+                        <div id="score-bar" class="h-full w-0 transition-all duration-1000 bg-slate-300"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="mt-12 text-center text-slate-400 text-sm pb-8">
+            SPL Guard Framework &copy; 2026 - Avaliação de Criticidade
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const weights = {
+                q1_1: 50, q1_2: 50, q1_3: 50, q1_4: 50, q1_5: 50,
+                q2_1: 50, q2_2: 30, q2_3: 40, q2_4: 40, q2_5: 40,
+                q3_1: 30, q3_2: 40, q3_3: 50, q3_4: 30,
+                q4_1: 50, q4_2: 40, q4_3: 30, q4_4: 30,
+                q5_1: 40, q5_2: 30, q5_3: 30,
+                q6_1: 30, q6_2: 20,
+                q7_1: 30, q7_2: 20,
+                q8_1: 20, q8_2: 10,
+                q9_1: 20
+            };
+
+            const radios = document.querySelectorAll('input[type="radio"]');
+            const scoreDisplay = document.getElementById('score-display');
+            const scoreCard = document.getElementById('score-card');
+            const scoreText = document.getElementById('score-text');
+            const scoreBar = document.getElementById('score-bar');
+            const scorePointer = document.getElementById('score-pointer');
+
+            function updateScore() {
+                let currentScore = 0;
+                let answered = false;
+
+                Object.keys(weights).forEach(questionName => {
+                    const checked = document.querySelector(`input[name="${questionName}"]:checked`);
+                    if (checked) {
+                        answered = true;
+                        if (checked.value === 'sim') {
+                            currentScore += weights[questionName];
+                        }
+                    }
+                });
+
+                if (!answered) return;
+
+                animateValue(scoreDisplay, parseInt(scoreDisplay.innerText) || 0, currentScore, 500);
+                
+                const percentage = (currentScore / 1000) * 100;
+                scoreBar.style.width = `${percentage}%`;
+                scorePointer.style.left = `${percentage}%`;
+
+                if (currentScore <= 490) {
+                    scoreDisplay.className = 'text-6xl font-black text-red-600 transition-colors duration-500';
+                    scoreCard.className = 'mt-12 bg-white border-2 border-red-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-red-50';
+                    scoreText.innerText = '🔴 Crítico (Sistema vulnerável)';
+                    scoreText.className = 'text-sm font-bold mt-3 text-red-600 uppercase tracking-wide';
+                    scoreBar.className = 'h-full transition-all duration-1000 bg-red-500';
+                } else if (currentScore <= 740) {
+                    scoreDisplay.className = 'text-6xl font-black text-amber-500 transition-colors duration-500';
+                    scoreCard.className = 'mt-12 bg-white border-2 border-amber-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-amber-50';
+                    scoreText.innerText = '🟡 Risco Moderado';
+                    scoreText.className = 'text-sm font-bold mt-3 text-amber-600 uppercase tracking-wide';
+                    scoreBar.className = 'h-full transition-all duration-1000 bg-amber-500';
+                } else if (currentScore <= 890) {
+                    scoreDisplay.className = 'text-6xl font-black text-emerald-500 transition-colors duration-500';
+                    scoreCard.className = 'mt-12 bg-white border-2 border-emerald-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-emerald-50';
+                    scoreText.innerText = '🟢 Aceitável';
+                    scoreText.className = 'text-sm font-bold mt-3 text-emerald-600 uppercase tracking-wide';
+                    scoreBar.className = 'h-full transition-all duration-1000 bg-emerald-500';
+                } else {
+                    scoreDisplay.className = 'text-6xl font-black text-blue-500 transition-colors duration-500';
+                    scoreCard.className = 'mt-12 bg-white border-2 border-blue-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-blue-50';
+                    scoreText.innerText = '🔵 Nível Elevado';
+                    scoreText.className = 'text-sm font-bold mt-3 text-blue-600 uppercase tracking-wide';
+                    scoreBar.className = 'h-full transition-all duration-1000 bg-blue-500';
+                }
+            }
+
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start);
+                    if (progress < 1) window.requestAnimationFrame(step);
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            radios.forEach(r => r.addEventListener('change', updateScore));
+        });
+    </script>
+</body>
+</html>
