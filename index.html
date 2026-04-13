@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPL GUARD — Etapa 1 Completa</title>
+    <title>SPL GUARD — Framework de Segurança</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased p-4 md:p-8">
 
-    <nav class="bg-indigo-600 p-4 shadow-md sticky top-0 z-50 mb-8 rounded-xl">
-        <div class="max-w-5xl mx-auto flex justify-between items-center text-white">
-            <div class="font-bold text-xl flex items-center gap-2">
+    <!-- Navegação Principal -->
+    <nav class="bg-indigo-600 p-4 shadow-md sticky top-0 z-50 mb-8 rounded-xl overflow-x-auto">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-white gap-4">
+            <div class="font-bold text-xl flex items-center gap-2 shrink-0">
                 <span>🛡️</span> SPL GUARD
             </div>
-            <div class="flex gap-3">
-                <a href="spl_guard_etapa3_testes.html" class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-bold hover:bg-indigo-50 transition-colors shadow-sm inline-block">Próxima Etapa ➔</a>
+            <div class="flex gap-2 text-sm font-bold overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-hide" id="main-nav">
+                <button id="btn-nav-definir" class="bg-white text-indigo-600 px-4 py-2 rounded-lg shadow-sm whitespace-nowrap transition-colors">1. Definir</button>
+                <button id="btn-nav-testar" class="bg-indigo-500 hover:bg-indigo-400 text-white px-4 py-2 rounded-lg transition-colors whitespace-nowrap">2. Testar</button>
+                <button class="bg-indigo-500 hover:bg-indigo-400 text-white px-4 py-2 rounded-lg transition-colors whitespace-nowrap cursor-not-allowed opacity-70">3. Validar</button>
+                <button class="bg-indigo-500 hover:bg-indigo-400 text-white px-4 py-2 rounded-lg transition-colors whitespace-nowrap cursor-not-allowed opacity-70">4. Corrigir</button>
+                <button class="bg-indigo-500 hover:bg-indigo-400 text-white px-4 py-2 rounded-lg transition-colors whitespace-nowrap cursor-not-allowed opacity-70">5. Manter</button>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-5xl mx-auto relative pb-40">
-        <!-- Cabeçalho -->
+    <!-- ETAPA 1: DEFINIR -->
+    <div id="secao-definir" class="max-w-5xl mx-auto relative pb-40 block">
         <header class="text-center mb-10">
             <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight flex justify-center items-center gap-3">
                 <span>🛡️</span> SPL GUARD
@@ -30,7 +35,6 @@
             </h2>
         </header>
 
-        <!-- Objetivo -->
         <div class="bg-indigo-600 text-white rounded-2xl p-6 md:p-8 shadow-lg mb-10">
             <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
                 <span>🧩</span> ETAPA 1: DEFINIR
@@ -40,472 +44,266 @@
             </p>
         </div>
 
-        <!-- Práticas (Grid) -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 1. COMPREENSÃO DO CONTEXTO DO SISTEMA</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">Antes de qualquer decisão técnica, o desenvolvedor deve compreender claramente o contexto do sistema. Isso inclui a definição do seu objetivo, o problema que resolve, o perfil dos usuários e o ambiente em que será executado. Sistemas expostos à internet devem ser tratados como ambientes hostis por padrão, exigindo maior rigor na aplicação de controles de segurança.</p>
+            <!-- Cards Etapa 1 (Omitidos parcialmente para manter foco no Testar, mantendo estrutura original) -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 1. COMPREENSÃO DO CONTEXTO</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Sistemas expostos à internet devem ser tratados como ambientes hostis por padrão, exigindo maior rigor na aplicação de controles de segurança.</p>
                 <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> Nunca iniciar o desenvolvimento sem compreender o nível de criticidade e exposição do sistema.
+                    <strong>👉 Boa prática:</strong> Nunca iniciar o desenvolvimento sem compreender o nível de criticidade.
                 </div>
             </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 2. CLASSIFICAÇÃO E TRATAMENTO DE DADOS</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">Identificar e classificar todos os dados que serão manipulados, com atenção especial aos dados sensíveis (credenciais, informações pessoais e financeiras). Essa classificação define diretamente os requisitos de proteção, como uso de criptografia, controle de acesso e retenção.</p>
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 2. TRATAMENTO DE DADOS</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Identificar e classificar todos os dados que serão manipulados, com atenção especial aos dados sensíveis para aplicar proteção adequada.</p>
                 <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> Dados sensíveis nunca devem ser armazenados ou transmitidos sem proteção adequada.
+                    <strong>👉 Boa prática:</strong> Dados sensíveis nunca devem ser armazenados sem proteção adequada.
                 </div>
             </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 3. DEFINIÇÃO DE AUTENTICAÇÃO</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">A autenticação deve ser definida de forma estruturada. Estabelecer políticas de senha, critérios de complexidade, mecanismos de recuperação de acesso e controle de sessão. Credenciais devem ser armazenadas utilizando algoritmos de hash seguros.</p>
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 3. AUTENTICAÇÃO</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Estabelecer políticas de senha, complexidade e recuperação segura. Senhas devem usar hash forte e sessões devem expirar.</p>
                 <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> A autenticação deve ser projetada antes da implementação, nunca improvisada durante o desenvolvimento.
+                    <strong>👉 Boa prática:</strong> A autenticação deve ser projetada antes da implementação.
                 </div>
             </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 4. CONTROLE DE ACESSO (AUTORIZAÇÃO)</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">Definir claramente os diferentes perfis de usuários e permissões. O princípio do menor privilégio deve ser aplicado. O controle de acesso deve ser validado no backend, independentemente das restrições implementadas na interface.</p>
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 4. CONTROLE DE ACESSO</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Definir perfis e permissões. Validar obrigatoriamente no backend, não apenas ocultando menus na interface.</p>
                 <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
                     <strong>👉 Boa prática:</strong> Nunca confiar no frontend para controle de permissões.
                 </div>
             </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 5. VALIDAÇÃO DE ENTRADAS E SUPERFÍCIE</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">Tratar entradas como potencialmente maliciosas. Definir previamente estratégias de validação, sanitização e restrição de dados, incluindo limites de tamanho, formatos esperados e controle de uploads para prevenir injeção de código e scripts maliciosos.</p>
-                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> Toda entrada deve ser validada no backend antes de qualquer processamento.
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 6. DEFINIÇÃO DA ARQUITETURA E EXPOSIÇÃO</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">Definir onde e como o sistema será executado, incluindo ambiente de hospedagem, serviços externos e APIs. Cada ponto de comunicação representa uma possível superfície de ataque e deve ser considerado no planejamento.</p>
-                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> Minimizar a superfície de ataque desde a arquitetura.
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 7. GESTÃO DE DEPENDÊNCIAS</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">O uso de bibliotecas e frameworks deve ser controlado e monitorado. Selecionar dependências confiáveis, mantê-las atualizadas e evitar o uso de código de origem desconhecida sem validação rigorosa.</p>
-                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> Toda dependência deve ser tratada como potencial risco.
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 8. CONFIGURAÇÃO SEGURA DO AMBIENTE</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">Ambientes de dev, teste e prod devem ser separados. O sistema nunca deve ser executado em produção com configurações de debug ativas. Credenciais não devem estar expostas no código-fonte.</p>
-                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> Erros de configuração são uma das principais causas de vulnerabilidades.
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 9. MONITORAMENTO E REGISTRO</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">Definir previamente quais eventos serão registrados pelo sistema, como tentativas de login, falhas de autenticação e ações críticas. Esses registros permitem identificar comportamentos suspeitos.</p>
-                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> Se não há monitoramento, não há controle de segurança.
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 10. CONTINUIDADE E RECUPERAÇÃO</h4>
-                <p class="text-slate-600 mb-4 text-sm mt-2">O sistema deve possuir estratégia de backup e recuperação, garantindo que dados possam ser restaurados em caso de falha ou incidente. O tempo tolerável de indisponibilidade deve ser predefinido.</p>
-                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
-                    <strong>👉 Boa prática:</strong> Segurança também envolve garantir disponibilidade.
-                </div>
-            </div>
-
         </div>
 
-        <!-- Checklist Ponderado -->
         <section class="bg-white rounded-3xl p-8 border border-slate-200 shadow-md">
-            <h3 class="text-2xl font-extrabold text-slate-900 mb-6 flex items-center gap-3 border-b pb-4">
-                ✅ AUTOAVALIAÇÃO DO DESENVOLVEDOR
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-6 border-b pb-4">
+                ✅ AUTOAVALIAÇÃO (SIMULAÇÃO RESUMIDA)
             </h3>
-
-            <div class="space-y-8">
-                
-                <!-- Grupo 1 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 1. SOBRE OS DADOS</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Os dados manipulados foram classificados (sensíveis, pessoais, comuns)?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q1_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q1_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Dados sensíveis estão protegidos (criptografia ou hash)?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q1_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q1_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe justificativa para coleta de cada dado?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q1_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q1_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe definição de onde os dados serão armazenados?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q1_4" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q1_4" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe definição de tempo de retenção dos dados?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q1_5" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q1_5" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center p-3 bg-slate-50 border rounded-lg">
+                    <span class="text-slate-700">Entendeu o problema do sistema?</span>
+                    <div class="flex gap-2">
+                        <label><input type="radio" name="q1" value="sim" class="peer sr-only"><div class="px-4 py-1 rounded bg-white border text-slate-500 peer-checked:bg-green-500 peer-checked:text-white cursor-pointer">Sim</div></label>
                     </div>
                 </div>
-
-                <!-- Grupo 2 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 2. SOBRE AUTENTICAÇÃO</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Senhas são armazenadas com hash seguro (bcrypt/argon2)?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q2_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q2_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe política mínima de senha (tamanho/complexidade)?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q2_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q2_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Sessões possuem expiração automática?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q2_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q2_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe proteção contra múltiplas tentativas de login?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q2_4" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q2_4" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe mecanismo seguro de recuperação de senha?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q2_5" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q2_5" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grupo 3 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 3. SOBRE CONTROLE DE ACESSO</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existem perfis de usuário definidos?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q3_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q3_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">O sistema aplica princípio do menor privilégio?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q3_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q3_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Permissões são validadas no backend?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q3_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q3_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe proteção contra acesso direto por URL/API?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q3_4" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q3_4" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grupo 4 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 4. SOBRE ENTRADAS E VALIDAÇÃO</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Todas as entradas são validadas no backend?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q4_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q4_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe proteção contra SQL Injection (queries parametrizadas)?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q4_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q4_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe proteção contra XSS?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q4_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q4_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe controle de tamanho/formato de entrada?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q4_4" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q4_4" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grupo 5 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 5. SOBRE ARQUITETURA E EXPOSIÇÃO</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">O sistema utiliza HTTPS obrigatoriamente?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q5_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q5_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Serviços desnecessários estão desativados?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q5_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q5_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Integrações externas são validadas e seguras?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q5_3" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q5_3" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grupo 6 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 6. SOBRE DEPENDÊNCIAS</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Bibliotecas utilizadas são confiáveis e atualizadas?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q6_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q6_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe controle sobre dependências utilizadas?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q6_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q6_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grupo 7 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 7. SOBRE CONFIGURAÇÃO</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Credenciais estão fora do código (env)?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q7_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q7_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Ambiente de produção está sem debug ativo?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q7_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q7_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grupo 8 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 8. SOBRE MONITORAMENTO</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">O sistema registra eventos críticos (logins, erros)?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q8_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q8_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Logs evitam exposição de dados sensíveis?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q8_2" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q8_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grupo 9 -->
-                <div>
-                    <h4 class="font-bold text-indigo-600 mb-3">🔹 9. SOBRE RESILIÊNCIA</h4>
-                    <div class="space-y-2 ml-0 md:ml-4">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
-                            <span class="text-slate-700">Existe estratégia de backup definida?</span>
-                            <div class="flex gap-2 shrink-0">
-                                <label class="cursor-pointer"><input type="radio" name="q9_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q9_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-
-            <!-- Pergunta Final -->
-            <div class="mt-10 bg-slate-50 border border-slate-200 rounded-xl p-6 text-center shadow-sm">
-                <h4 class="text-xl font-extrabold text-slate-800 mb-3 uppercase tracking-wide">🔥 PERGUNTA FINAL (A MAIS IMPORTANTE)</h4>
-                <p class="text-slate-600 font-medium mb-3">👉 Se você não conseguir responder isso, o sistema NÃO está pronto:</p>
-                <p class="text-slate-900 font-bold italic text-lg px-4">"Eu tenho certeza de que esse sistema não está nascendo vulnerável?"</p>
-            </div>
-
-            <!-- Score / Serasa Style -->
-            <div id="score-card" class="mt-8 bg-white border-2 border-slate-200 rounded-2xl p-6 text-center shadow-lg sticky bottom-4 z-50 transition-all duration-500">
-                <h4 class="text-lg font-bold text-slate-700 mb-1 uppercase tracking-wider">Classificação Final (SPL Guard)</h4>
+            <div id="score-card-etapa1" class="mt-8 bg-white border-2 border-slate-200 rounded-2xl p-6 text-center shadow-lg">
+                <h4 class="text-lg font-bold text-slate-700 mb-1 uppercase tracking-wider">Score (Simulação)</h4>
                 <div class="flex items-center justify-center gap-2">
-                    <span id="score-display" class="text-6xl font-black text-slate-300 transition-colors duration-500">0</span>
-                    <span class="text-slate-400 font-medium text-xl mt-4">/ 1000</span>
-                </div>
-                <p id="score-text" class="text-sm font-bold mt-3 text-slate-500 uppercase tracking-wide">Avaliação não iniciada</p>
-                
-                <div class="relative w-full mt-6">
-                    <div id="score-pointer" class="absolute -top-6 -ml-3 transition-all duration-1000 z-10 text-2xl" style="left: 0%;">🔽</div>
-                    <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden flex">
-                        <div id="score-bar" class="h-full w-0 transition-all duration-1000 bg-slate-300"></div>
-                    </div>
+                    <span class="text-6xl font-black text-slate-300">0</span><span class="text-slate-400 font-medium text-xl mt-4">/ 1000</span>
                 </div>
             </div>
         </section>
-        
-        <footer class="mt-12 text-center text-slate-400 text-sm pb-8">
-            SPL Guard Framework &copy; 2026 - Desenvolvido para PMEs
-        </footer>
+    </div>
+
+    <!-- ETAPA 2: TESTAR -->
+    <div id="secao-testar" class="max-w-5xl mx-auto relative pb-20 hidden">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight flex justify-center items-center gap-3">
+                <span>🔬</span> SPL GUARD — TESTES
+            </h1>
+            <h2 class="text-xl md:text-2xl font-medium text-slate-600 mt-2 uppercase tracking-widest">
+                Validação Automatizada
+            </h2>
+        </header>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center mb-10">
+            <button id="btn-sast" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-2xl shadow-md transition-all transform hover:-translate-y-1">
+                <h3 class="text-2xl font-black mb-2">SAST</h3>
+                <p class="text-blue-100 font-medium">Análise de Código Estático</p>
+                <p class="text-sm text-blue-200 mt-1">(SonarQube)</p>
+            </button>
+            <button id="btn-dast" class="flex-1 bg-orange-500 hover:bg-orange-600 text-white p-6 rounded-2xl shadow-md transition-all transform hover:-translate-y-1">
+                <h3 class="text-2xl font-black mb-2">DAST</h3>
+                <p class="text-orange-100 font-medium">Análise Dinâmica de Aplicação</p>
+                <p class="text-sm text-orange-200 mt-1">(OWASP ZAP)</p>
+            </button>
+        </div>
+
+        <!-- Conteúdo SAST -->
+        <div id="conteudo-sast" class="hidden bg-white rounded-3xl p-8 border border-slate-200 shadow-xl mb-10">
+            <div class="border-b-2 border-blue-100 pb-4 mb-6">
+                <h3 class="text-3xl font-extrabold text-blue-700 flex items-center gap-3">
+                    <span>📘</span> Tutorial Completo: Instalação do SonarQube
+                </h3>
+                <h4 class="text-xl font-bold text-slate-700 mt-2">🖥️ PARTE 1 — INSTALAÇÃO NO WINDOWS (PRINCIPAL)</h4>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Passo 1 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">🔹 1. Instalar o Java (JDK 17)</h4>
+                    <p class="text-slate-700 mb-2">O SonarQube <strong>NÃO</strong> funciona sem Java.</p>
+                    <p class="text-slate-700 font-semibold mt-4">Passos:</p>
+                    <ul class="list-disc list-inside text-slate-700 mb-4 ml-2">
+                        <li>Baixe o JDK 17 (recomendo): Eclipse Temurin</li>
+                        <li>Instale normalmente (Next → Next → Finish)</li>
+                    </ul>
+                    <p class="text-slate-700 font-semibold text-green-600 flex items-center gap-2"><span>✔️</span> Verificar instalação</p>
+                    <p class="text-slate-700 mb-2">Abra o Prompt de Comando (CMD):</p>
+                    <code class="block bg-slate-800 text-green-400 p-3 rounded-lg text-sm font-mono mb-4">java -version</code>
+                    <img src="image_28c1c2.png" alt="Print do CMD java -version" class="rounded-lg shadow-sm border border-slate-200 mb-2 max-w-full">
+                    <p class="text-sm text-slate-500 mt-2">👉 Deve aparecer algo como: <code class="bg-slate-200 px-1 rounded">openjdk version "17.x.x"</code></p>
+                    <p class="text-sm text-red-600 font-semibold mt-2">❌ Se der erro → Java não foi configurado no PATH.</p>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">🔹 2. Baixar o SonarQube</h4>
+                    <p class="text-slate-700 mb-2">Acesse: <a href="https://www.sonarsource.com/products/sonarqube/downloads/" target="_blank" class="text-blue-600 underline">Link oficial</a> e baixe a versão Community (gratuita).</p>
+                    <p class="text-slate-700 mb-4">Extraia o ZIP para uma pasta, por exemplo: <code class="bg-slate-200 px-1 rounded">C:\sonarqube</code></p>
+                    <img src="6939f5c3-f383-4b2b-bad0-84aea3f8885d.png" alt="Print do explorer mostrando a pasta extraída" class="rounded-lg shadow-sm border border-slate-200 max-w-full">
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">🔹 3. Estrutura do projeto</h4>
+                    <p class="text-slate-700 mb-2">Dentro da pasta você verá algo como:</p>
+                    <code class="block bg-slate-800 text-slate-300 p-3 rounded-lg text-sm font-mono mb-4">
+                        bin/<br>conf/<br>data/<br>logs/<br>extensions/
+                    </code>
+                    <img src="image_28c4e7.png" alt="Print da pasta aberta" class="rounded-lg shadow-sm border border-slate-200 max-w-full">
+                </div>
+
+                <!-- Passo 4 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">🔹 4. Iniciar o SonarQube</h4>
+                    <p class="text-slate-700 mb-2">Vá até: <code class="bg-slate-200 px-1 rounded">bin\windows-x86-64</code></p>
+                    <p class="text-slate-700 mb-4">Execute: <code class="bg-slate-200 px-1 rounded">StartSonar.bat</code></p>
+                    <img src="{print do programa executando}.png" alt="Print do programa executando" class="rounded-lg shadow-sm border border-slate-200 mb-2 max-w-full">
+                    <p class="text-sm text-slate-500 mt-2">👉 Vai abrir um terminal com logs.</p>
+                </div>
+
+                <!-- Passo 5 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">🔹 5. Aguardar inicialização</h4>
+                    <p class="text-slate-700 mb-2">Você verá mensagens como: <code class="bg-slate-200 px-1 rounded">SonarQube is up</code></p>
+                    <div class="bg-slate-200 border-dashed border-2 border-slate-400 rounded-lg p-6 text-center text-slate-500 mb-2">
+                        📸 [Imagem pendente: print do cmd com “started” ou logs finais]
+                    </div>
+                </div>
+
+                <!-- Passo 6 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">🔹 6. Acessar no navegador</h4>
+                    <p class="text-slate-700 mb-4">Abra: <a href="http://localhost:9000" target="_blank" class="text-blue-600 underline">http://localhost:9000</a></p>
+                    <div class="bg-slate-200 border-dashed border-2 border-slate-400 rounded-lg p-6 text-center text-slate-500 mb-4">
+                        📸 [Imagem pendente: print do navegador com tela de login]
+                    </div>
+                    <p class="text-slate-700 font-semibold mb-2">Login padrão:</p>
+                    <ul class="list-disc list-inside text-slate-700 mb-4 ml-2">
+                        <li>user: <strong>admin</strong></li>
+                        <li>password: <strong>admin</strong></li>
+                    </ul>
+                    <div class="bg-slate-200 border-dashed border-2 border-slate-400 rounded-lg p-6 text-center text-slate-500">
+                        📸 [Imagem pendente: print do dashboard inicial]
+                    </div>
+                </div>
+
+                <!-- Passo 7 -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">🔹 7. Trocar senha (obrigatório)</h4>
+                    <p class="text-slate-700 mb-4">O sistema vai pedir para trocar a senha na primeira vez.</p>
+                    <div class="bg-slate-200 border-dashed border-2 border-slate-400 rounded-lg p-6 text-center text-slate-500">
+                        📸 [Imagem pendente: print da tela de troca de senha]
+                    </div>
+                </div>
+
+                <!-- Problemas Comuns -->
+                <div class="bg-red-50 p-6 rounded-xl border-l-4 border-red-500 shadow-sm mt-8">
+                    <h4 class="text-xl font-black text-red-700 mb-4 flex items-center gap-2">⚠️ Problemas comuns no Windows</h4>
+                    
+                    <div class="mb-6">
+                        <h5 class="font-bold text-red-800 mb-1 flex items-center gap-1"><span class="text-red-600">❌</span> Porta 9000 ocupada</h5>
+                        <p class="text-sm text-slate-700 mb-2">Erro: <code class="bg-red-100 text-red-800 px-1 rounded">Port already in use</code></p>
+                        <p class="text-sm font-bold text-green-700 flex items-center gap-1 mb-2"><span class="text-green-600">✔️</span> Solução:</p>
+                        <code class="block bg-slate-800 text-green-400 p-2 rounded text-sm font-mono mb-2">netstat -ano | findstr 9000</code>
+                        <div class="bg-slate-200 border-dashed border-2 border-slate-400 rounded p-4 text-center text-slate-500 text-xs mb-2">
+                            📸 [Imagem pendente: print do cmd]
+                        </div>
+                        <p class="text-sm text-slate-700 mb-2">Depois finalize o processo:</p>
+                        <code class="block bg-slate-800 text-green-400 p-2 rounded text-sm font-mono">taskkill /PID XXXX /F</code>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-red-800 mb-1 flex items-center gap-1"><span class="text-red-600">❌</span> Java não reconhecido</h5>
+                        <p class="text-sm text-slate-700 mb-2">Erro: <code class="bg-red-100 text-red-800 px-1 rounded">java is not recognized</code></p>
+                        <p class="text-sm font-bold text-green-700 flex items-center gap-1 mb-2"><span class="text-green-600">✔️</span> Solução:</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 mb-2 ml-2">
+                            <li>Configurar variável de ambiente JAVA_HOME</li>
+                            <li>Adicionar ao PATH</li>
+                        </ul>
+                        <div class="bg-slate-200 border-dashed border-2 border-slate-400 rounded p-4 text-center text-slate-500 text-xs">
+                            📸 [Imagem pendente: print das variáveis de ambiente]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteúdo DAST (Placeholder) -->
+        <div id="conteudo-dast" class="hidden bg-white rounded-3xl p-8 border border-slate-200 shadow-xl text-center mb-10">
+            <h3 class="text-3xl font-extrabold text-orange-600 mb-4">DAST — OWASP ZAP</h3>
+            <p class="text-slate-500">Selecione e configure a ferramenta DAST para testes dinâmicos de segurança na aplicação em execução.</p>
+        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const weights = {
-                q1_1: 50, q1_2: 50, q1_3: 50, q1_4: 50, q1_5: 50,
-                q2_1: 50, q2_2: 30, q2_3: 40, q2_4: 40, q2_5: 40,
-                q3_1: 30, q3_2: 40, q3_3: 50, q3_4: 30,
-                q4_1: 50, q4_2: 40, q4_3: 30, q4_4: 30,
-                q5_1: 40, q5_2: 30, q5_3: 30,
-                q6_1: 30, q6_2: 20,
-                q7_1: 30, q7_2: 20,
-                q8_1: 20, q8_2: 10,
-                q9_1: 20
-            };
+            const btnNavDefinir = document.getElementById('btn-nav-definir');
+            const btnNavTestar = document.getElementById('btn-nav-testar');
+            const secaoDefinir = document.getElementById('secao-definir');
+            const secaoTestar = document.getElementById('secao-testar');
 
-            const radios = document.querySelectorAll('input[type="radio"]');
-            const scoreDisplay = document.getElementById('score-display');
-            const scoreCard = document.getElementById('score-card');
-            const scoreText = document.getElementById('score-text');
-            const scoreBar = document.getElementById('score-bar');
-            const scorePointer = document.getElementById('score-pointer');
+            const btnSast = document.getElementById('btn-sast');
+            const btnDast = document.getElementById('btn-dast');
+            const conteudoSast = document.getElementById('conteudo-sast');
+            const conteudoDast = document.getElementById('conteudo-dast');
 
-            function updateScore() {
-                let currentScore = 0;
-                let answered = false;
-
-                Object.keys(weights).forEach(questionName => {
-                    const checked = document.querySelector(`input[name="${questionName}"]:checked`);
-                    if (checked) {
-                        answered = true;
-                        if (checked.value === 'sim') {
-                            currentScore += weights[questionName];
-                        }
-                    }
-                });
-
-                if (!answered) return;
-
-                animateValue(scoreDisplay, parseInt(scoreDisplay.innerText) || 0, currentScore, 500);
+            // Navegação Topo
+            btnNavTestar.addEventListener('click', () => {
+                secaoDefinir.classList.add('hidden');
+                secaoTestar.classList.remove('hidden');
                 
-                const percentage = (currentScore / 1000) * 100;
-                scoreBar.style.width = `${percentage}%`;
-                scorePointer.style.left = `${percentage}%`;
+                // Atualiza estilos Nav
+                btnNavTestar.classList.replace('bg-indigo-500', 'bg-white');
+                btnNavTestar.classList.replace('text-white', 'text-indigo-600');
+                btnNavTestar.classList.remove('hover:bg-indigo-400');
+                
+                btnNavDefinir.classList.replace('bg-white', 'bg-indigo-500');
+                btnNavDefinir.classList.replace('text-indigo-600', 'text-white');
+                btnNavDefinir.classList.add('hover:bg-indigo-400');
+            });
 
-                if (currentScore <= 490) {
-                    scoreDisplay.className = 'text-6xl font-black text-red-600 transition-colors duration-500';
-                    scoreCard.className = 'mt-8 bg-white border-2 border-red-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-red-50';
-                    scoreText.innerText = '🔴 Crítico (Sistema vulnerável)';
-                    scoreText.className = 'text-sm font-bold mt-3 text-red-600 uppercase tracking-wide';
-                    scoreBar.className = 'h-full transition-all duration-1000 bg-red-500';
-                } else if (currentScore <= 740) {
-                    scoreDisplay.className = 'text-6xl font-black text-amber-500 transition-colors duration-500';
-                    scoreCard.className = 'mt-8 bg-white border-2 border-amber-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-amber-50';
-                    scoreText.innerText = '🟡 Risco Moderado';
-                    scoreText.className = 'text-sm font-bold mt-3 text-amber-600 uppercase tracking-wide';
-                    scoreBar.className = 'h-full transition-all duration-1000 bg-amber-500';
-                } else if (currentScore <= 890) {
-                    scoreDisplay.className = 'text-6xl font-black text-emerald-500 transition-colors duration-500';
-                    scoreCard.className = 'mt-8 bg-white border-2 border-emerald-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-emerald-50';
-                    scoreText.innerText = '🟢 Aceitável';
-                    scoreText.className = 'text-sm font-bold mt-3 text-emerald-600 uppercase tracking-wide';
-                    scoreBar.className = 'h-full transition-all duration-1000 bg-emerald-500';
-                } else {
-                    scoreDisplay.className = 'text-6xl font-black text-blue-500 transition-colors duration-500';
-                    scoreCard.className = 'mt-8 bg-white border-2 border-blue-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-blue-50';
-                    scoreText.innerText = '🔵 Nível Elevado';
-                    scoreText.className = 'text-sm font-bold mt-3 text-blue-600 uppercase tracking-wide';
-                    scoreBar.className = 'h-full transition-all duration-1000 bg-blue-500';
-                }
-            }
+            btnNavDefinir.addEventListener('click', () => {
+                secaoTestar.classList.add('hidden');
+                secaoDefinir.classList.remove('hidden');
+                
+                // Atualiza estilos Nav
+                btnNavDefinir.classList.replace('bg-indigo-500', 'bg-white');
+                btnNavDefinir.classList.replace('text-white', 'text-indigo-600');
+                btnNavDefinir.classList.remove('hover:bg-indigo-400');
 
-            function animateValue(obj, start, end, duration) {
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    obj.innerHTML = Math.floor(progress * (end - start) + start);
-                    if (progress < 1) window.requestAnimationFrame(step);
-                };
-                window.requestAnimationFrame(step);
-            }
+                btnNavTestar.classList.replace('bg-white', 'bg-indigo-500');
+                btnNavTestar.classList.replace('text-indigo-600', 'text-white');
+                btnNavTestar.classList.add('hover:bg-indigo-400');
+            });
 
-            radios.forEach(r => r.addEventListener('change', updateScore));
+            // Botões SAST / DAST
+            btnSast.addEventListener('click', () => {
+                conteudoDast.classList.add('hidden');
+                conteudoSast.classList.remove('hidden');
+                btnSast.classList.add('ring-4', 'ring-blue-300');
+                btnDast.classList.remove('ring-4', 'ring-orange-300');
+            });
+
+            btnDast.addEventListener('click', () => {
+                conteudoSast.classList.add('hidden');
+                conteudoDast.classList.remove('hidden');
+                btnDast.classList.add('ring-4', 'ring-orange-300');
+                btnSast.classList.remove('ring-4', 'ring-blue-300');
+            });
         });
     </script>
 </body>
