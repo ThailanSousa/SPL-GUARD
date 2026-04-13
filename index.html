@@ -3,21 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPL GUARD — Avaliação de Risco Ponderada</title>
+    <title>SPL GUARD — Etapa 1 Completa</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased p-4 md:p-8">
 
+    <nav class="bg-indigo-600 p-4 shadow-md sticky top-0 z-50 mb-8 rounded-xl">
+        <div class="max-w-5xl mx-auto flex justify-between items-center text-white">
+            <div class="font-bold text-xl flex items-center gap-2">
+                <span>🛡️</span> SPL GUARD
+            </div>
+            <div class="flex gap-3">
+                <button class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-bold hover:bg-indigo-50 transition-colors shadow-sm">Próxima Etapa ➔</button>
+            </div>
+        </div>
+    </nav>
+
     <div class="max-w-5xl mx-auto relative pb-40">
+        <!-- Cabeçalho -->
         <header class="text-center mb-10">
             <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight flex justify-center items-center gap-3">
                 <span>🛡️</span> SPL GUARD
             </h1>
             <h2 class="text-xl md:text-2xl font-medium text-slate-600 mt-2 uppercase tracking-widest">
-                Validação de Requisitos — Etapa 1
+                Guia de Boas Práticas — Etapa 1
             </h2>
         </header>
 
+        <!-- Objetivo -->
+        <div class="bg-indigo-600 text-white rounded-2xl p-6 md:p-8 shadow-lg mb-10">
+            <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
+                <span>🧩</span> ETAPA 1: DEFINIR
+            </h3>
+            <p class="text-indigo-100 text-lg leading-relaxed">
+                <strong class="text-white">🎯 Objetivo da Etapa:</strong> Estabelecer, antes do início do desenvolvimento, todos os requisitos mínimos de segurança necessários para garantir que o sistema não seja construído com vulnerabilidades estruturais, reduzindo riscos técnicos, operacionais e legais.
+            </p>
+        </div>
+
+        <!-- Práticas (Grid) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 1. COMPREENSÃO DO CONTEXTO DO SISTEMA</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Antes de qualquer decisão técnica, o desenvolvedor deve compreender claramente o contexto do sistema. Isso inclui a definição do seu objetivo, o problema que resolve, o perfil dos usuários e o ambiente em que será executado. Sistemas expostos à internet devem ser tratados como ambientes hostis por padrão, exigindo maior rigor na aplicação de controles de segurança.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Nunca iniciar o desenvolvimento sem compreender o nível de criticidade e exposição do sistema.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 2. CLASSIFICAÇÃO E TRATAMENTO DE DADOS</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Identificar e classificar todos os dados que serão manipulados, com atenção especial aos dados sensíveis (credenciais, informações pessoais e financeiras). Essa classificação define diretamente os requisitos de proteção, como uso de criptografia, controle de acesso e retenção.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Dados sensíveis nunca devem ser armazenados ou transmitidos sem proteção adequada.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 3. DEFINIÇÃO DE AUTENTICAÇÃO</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">A autenticação deve ser definida de forma estruturada. Estabelecer políticas de senha, critérios de complexidade, mecanismos de recuperação de acesso e controle de sessão. Credenciais devem ser armazenadas utilizando algoritmos de hash seguros.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> A autenticação deve ser projetada antes da implementação, nunca improvisada durante o desenvolvimento.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 4. CONTROLE DE ACESSO (AUTORIZAÇÃO)</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Definir claramente os diferentes perfis de usuários e permissões. O princípio do menor privilégio deve ser aplicado. O controle de acesso deve ser validado no backend, independentemente das restrições implementadas na interface.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Nunca confiar no frontend para controle de permissões.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 5. VALIDAÇÃO DE ENTRADAS E SUPERFÍCIE</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Tratar entradas como potencialmente maliciosas. Definir previamente estratégias de validação, sanitização e restrição de dados, incluindo limites de tamanho, formatos esperados e controle de uploads para prevenir injeção de código e scripts maliciosos.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Toda entrada deve ser validada no backend antes de qualquer processamento.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 6. DEFINIÇÃO DA ARQUITETURA E EXPOSIÇÃO</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Definir onde e como o sistema será executado, incluindo ambiente de hospedagem, serviços externos e APIs. Cada ponto de comunicação representa uma possível superfície de ataque e deve ser considerado no planejamento.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Minimizar a superfície de ataque desde a arquitetura.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 7. GESTÃO DE DEPENDÊNCIAS</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">O uso de bibliotecas e frameworks deve ser controlado e monitorado. Selecionar dependências confiáveis, mantê-las atualizadas e evitar o uso de código de origem desconhecida sem validação rigorosa.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Toda dependência deve ser tratada como potencial risco.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 8. CONFIGURAÇÃO SEGURA DO AMBIENTE</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Ambientes de dev, teste e prod devem ser separados. O sistema nunca deve ser executado em produção com configurações de debug ativas. Credenciais não devem estar expostas no código-fonte.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Erros de configuração são uma das principais causas de vulnerabilidades.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 9. MONITORAMENTO E REGISTRO</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">Definir previamente quais eventos serão registrados pelo sistema, como tentativas de login, falhas de autenticação e ações críticas. Esses registros permitem identificar comportamentos suspeitos.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Se não há monitoramento, não há controle de segurança.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <h4 class="text-lg font-bold text-slate-900 mb-1 flex items-start gap-2"><span>🧠</span> 10. CONTINUIDADE E RECUPERAÇÃO</h4>
+                <p class="text-slate-600 mb-4 text-sm mt-2">O sistema deve possuir estratégia de backup e recuperação, garantindo que dados possam ser restaurados em caso de falha ou incidente. O tempo tolerável de indisponibilidade deve ser predefinido.</p>
+                <div class="bg-green-50 text-green-800 p-3 rounded-lg text-sm border border-green-100">
+                    <strong>👉 Boa prática:</strong> Segurança também envolve garantir disponibilidade.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Checklist Ponderado -->
         <section class="bg-white rounded-3xl p-8 border border-slate-200 shadow-md">
             <h3 class="text-2xl font-extrabold text-slate-900 mb-6 flex items-center gap-3 border-b pb-4">
                 ✅ AUTOAVALIAÇÃO DO DESENVOLVEDOR
@@ -117,7 +225,7 @@
                             <span class="text-slate-700">Existem perfis de usuário definidos?</span>
                             <div class="flex gap-2 shrink-0">
                                 <label class="cursor-pointer"><input type="radio" name="q3_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q3_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q3_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
                             </div>
                         </div>
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
@@ -187,7 +295,7 @@
                             <span class="text-slate-700">O sistema utiliza HTTPS obrigatoriamente?</span>
                             <div class="flex gap-2 shrink-0">
                                 <label class="cursor-pointer"><input type="radio" name="q5_1" value="sim" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-green-500 peer-checked:text-white peer-checked:border-green-600 transition-colors">Sim</div></label>
-                                <label class="cursor-pointer"><input type="radio" name="q5_2" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
+                                <label class="cursor-pointer"><input type="radio" name="q5_1" value="nao" class="peer sr-only"><div class="px-4 py-1.5 rounded text-sm font-bold bg-white border border-slate-200 text-slate-500 peer-checked:bg-red-500 peer-checked:text-white peer-checked:border-red-600 transition-colors">Não</div></label>
                             </div>
                         </div>
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3 bg-slate-50 border border-slate-100 rounded-lg">
@@ -286,8 +394,15 @@
 
             </div>
 
-            <!-- Score 0 a 1000 Estilo Serasa -->
-            <div id="score-card" class="mt-12 bg-white border-2 border-slate-200 rounded-2xl p-6 text-center shadow-lg sticky bottom-4 z-50 transition-all duration-500">
+            <!-- Pergunta Final -->
+            <div class="mt-10 bg-slate-50 border border-slate-200 rounded-xl p-6 text-center shadow-sm">
+                <h4 class="text-xl font-extrabold text-slate-800 mb-3 uppercase tracking-wide">🔥 PERGUNTA FINAL (A MAIS IMPORTANTE)</h4>
+                <p class="text-slate-600 font-medium mb-3">👉 Se você não conseguir responder isso, o sistema NÃO está pronto:</p>
+                <p class="text-slate-900 font-bold italic text-lg px-4">"Eu tenho certeza de que esse sistema não está nascendo vulnerável?"</p>
+            </div>
+
+            <!-- Score / Serasa Style -->
+            <div id="score-card" class="mt-8 bg-white border-2 border-slate-200 rounded-2xl p-6 text-center shadow-lg sticky bottom-4 z-50 transition-all duration-500">
                 <h4 class="text-lg font-bold text-slate-700 mb-1 uppercase tracking-wider">Classificação Final (SPL Guard)</h4>
                 <div class="flex items-center justify-center gap-2">
                     <span id="score-display" class="text-6xl font-black text-slate-300 transition-colors duration-500">0</span>
@@ -305,7 +420,7 @@
         </section>
         
         <footer class="mt-12 text-center text-slate-400 text-sm pb-8">
-            SPL Guard Framework &copy; 2026 - Avaliação de Criticidade
+            SPL Guard Framework &copy; 2026 - Desenvolvido para PMEs
         </footer>
     </div>
 
@@ -354,25 +469,25 @@
 
                 if (currentScore <= 490) {
                     scoreDisplay.className = 'text-6xl font-black text-red-600 transition-colors duration-500';
-                    scoreCard.className = 'mt-12 bg-white border-2 border-red-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-red-50';
+                    scoreCard.className = 'mt-8 bg-white border-2 border-red-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-red-50';
                     scoreText.innerText = '🔴 Crítico (Sistema vulnerável)';
                     scoreText.className = 'text-sm font-bold mt-3 text-red-600 uppercase tracking-wide';
                     scoreBar.className = 'h-full transition-all duration-1000 bg-red-500';
                 } else if (currentScore <= 740) {
                     scoreDisplay.className = 'text-6xl font-black text-amber-500 transition-colors duration-500';
-                    scoreCard.className = 'mt-12 bg-white border-2 border-amber-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-amber-50';
+                    scoreCard.className = 'mt-8 bg-white border-2 border-amber-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-amber-50';
                     scoreText.innerText = '🟡 Risco Moderado';
                     scoreText.className = 'text-sm font-bold mt-3 text-amber-600 uppercase tracking-wide';
                     scoreBar.className = 'h-full transition-all duration-1000 bg-amber-500';
                 } else if (currentScore <= 890) {
                     scoreDisplay.className = 'text-6xl font-black text-emerald-500 transition-colors duration-500';
-                    scoreCard.className = 'mt-12 bg-white border-2 border-emerald-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-emerald-50';
+                    scoreCard.className = 'mt-8 bg-white border-2 border-emerald-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-emerald-50';
                     scoreText.innerText = '🟢 Aceitável';
                     scoreText.className = 'text-sm font-bold mt-3 text-emerald-600 uppercase tracking-wide';
                     scoreBar.className = 'h-full transition-all duration-1000 bg-emerald-500';
                 } else {
                     scoreDisplay.className = 'text-6xl font-black text-blue-500 transition-colors duration-500';
-                    scoreCard.className = 'mt-12 bg-white border-2 border-blue-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-blue-50';
+                    scoreCard.className = 'mt-8 bg-white border-2 border-blue-200 rounded-2xl p-6 text-center shadow-2xl sticky bottom-4 z-50 transition-all duration-500 ring-4 ring-blue-50';
                     scoreText.innerText = '🔵 Nível Elevado';
                     scoreText.className = 'text-sm font-bold mt-3 text-blue-600 uppercase tracking-wide';
                     scoreBar.className = 'h-full transition-all duration-1000 bg-blue-500';
